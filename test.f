@@ -11,7 +11,14 @@ pub fn main() i32 {
 
     const node = allocator.new(Node)
     defer allocator.delete(node)
+    const node2 = allocator.new(Node)
+    defer allocator.delete(node2)
+    const node3 = allocator.new(Node)
+    defer allocator.delete(node3)
 
-    node.value = 42
+    node3.value = 42
+    node2.value = node3.value
+    node.value = node2.value
+
     return node.value
 }
