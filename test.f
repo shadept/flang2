@@ -1,10 +1,10 @@
 import std.allocator
 
 struct Node {
-    value: usize
+    value: i32
 }
 
-pub fn main() {
+pub fn main() i32 {
     const buffer = [0; 256]
     const fba = fixed_buffer_allocator(buffer)
     const allocator = fba.allocator()
