@@ -1,24 +1,16 @@
-import std.allocator
+import std.list
 
 struct Node {
     value: i32
 }
 
-pub fn main() i32 {
-    const buffer = [0; 256]
-    const fba = fixed_buffer_allocator(buffer)
-    const allocator = fba.allocator()
+pub fn main() {
+    let node: Node = .{ value = 42 }
 
-    const node = allocator.new(Node)
-    defer allocator.delete(node)
-    const node2 = allocator.new(Node)
-    defer allocator.delete(node2)
-    const node3 = allocator.new(Node)
-    defer allocator.delete(node3)
+    let list: List(Node)
+    list.push(.{ value = 27 })
+    list.push(.{ value = 42 })
+    list.push(.{ value = 69 })
 
-    node3.value = 42
-    node2.value = node3.value
-    node.value = node2.value
-
-    return node.value
+    print(list.get(1).value)
 }
