@@ -14,13 +14,13 @@ pub fn main() {
     list.push(&b)
     list.push(&c)
 
-    for (node in list) {
-        print(node.value)
+    for (n in list) {
+        println(n.value)
     }
 
     b.value = 420
 
-    for (node in list) {
-        print(node.value)
+    for (n in list) {
+        println(n.value)
     }
 }
