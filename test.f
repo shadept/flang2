@@ -1,26 +1,22 @@
-import std.list
+import std.dict
+import std.text.string
 
 struct Node {
     value: i32
 }
 
+fn op_eq(a: Node, b: Node) bool {
+    return a.value == b.value
+}
+
+
+
 pub fn main() {
-    const a: Node = .{ value = 27 }
-    const b: Node = .{ value = 42 }
-    const c: Node = .{ value = 69 }
-
-    let list: List(&Node)
-    list.push(&a)
-    list.push(&b)
-    list.push(&c)
-
-    for (n in list) {
-        println(n.value)
+    const str = "Hello, World!"
+    for (c in str.bytes()) {
+        println(c)
     }
 
-    b.value = 420
-
-    for (n in list) {
-        println(n.value)
-    }
+    let dict: Dict(String, String)
+    dict.set("key", "value")
 }
