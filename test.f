@@ -18,5 +18,13 @@ pub fn main() {
     }
 
     let dict: Dict(String, String)
+    defer dict.deinit()
     dict.set("key", "value")
+
+    for (entry in dict) {
+        print(entry.key)
+        print(": ")
+        println(entry.value)
+    }
+
 }
