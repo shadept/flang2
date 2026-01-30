@@ -1,30 +1,18 @@
-import std.dict
-import std.text.string
+import std.algo.iter
+import std.char
+import std.string
 
-struct Node {
-    value: i32
+fn add_one(n: u8) u8 {
+    n + 1
 }
-
-fn op_eq(a: Node, b: Node) bool {
-    return a.value == b.value
-}
-
-
 
 pub fn main() {
-    const str = "Hello, World!"
-    for (c in str.bytes()) {
+    const str = "Gdkkn+Vnqkc "
+    for (c in str.bytes().map(add_one)) {
         println(c)
     }
+    println("")
 
-    let dict: Dict(String, String)
-    defer dict.deinit()
-    dict.set("key", "value")
-
-    for (entry in dict) {
-        print(entry.key)
-        print(": ")
-        println(entry.value)
-    }
-
+    const r = 0..10
+    println(r[5])
 }
