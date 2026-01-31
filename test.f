@@ -1,18 +1,14 @@
-import std.algo.iter
+import std.iter
 import std.char
 import std.string
-
-fn add_one(n: u8) u8 {
-    n + 1
-}
+import std.string_builder
 
 pub fn main() {
-    const str = "Gdkkn+Vnqkc "
-    for (c in str.bytes().map(add_one)) {
-        println(c)
-    }
-    println("")
+    let sb: StringBuilder
+    sb.append("Hello, ")
+    sb.append("World!")
+    let str = sb.as_string()
+    println(str)
 
-    const r = 0..10
-    println(r[5])
+    println(type_of(i32).name)
 }
